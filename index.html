@@ -1,92 +1,237 @@
-Your Soft Summer Capsule
-17/18 Pieces Complete
-Last Updated: June 9, 2026
-Your 16 Core Colors
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft Summer Capsule</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#7B8DA1">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f8f9fa;
+            color: #2c3e50;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 28px; margin-bottom: 8px; color: #7B8DA1; }
+        .subtitle { color: #5A6E7C; margin-bottom: 30px; font-size: 16px; }
+        .date { font-size: 14px; color: #7D8CA3; margin-bottom: 30px; }
+        h2 { font-size: 20px; margin: 30px 0 15px; color: #5A6E7C; }
+        .swatches { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+            gap: 15px; 
+            margin-bottom: 40px; 
+        }
+        .swatch { 
+            border-radius: 8px; 
+            overflow: hidden; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: white;
+        }
+        .color { height: 80px; }
+        .label { padding: 12px; }
+        .name { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+        .hex { font-size: 12px; color: #7D8CA3; font-family: monospace; }
+        .section { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 12px; 
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .toss { background: #fff5f5; border-left: 4px solid #e53e3e; }
+        .status { background: #f0f9ff; border-left: 4px solid #7B8DA1; }
+        .item { padding: 6px 0; }
+        .item:before { content: "✓ "; color: #7B8DA1; font-weight: bold; }
+        .missing:before { content: "○ "; color: #C8A8A0; }
+        .buttons { display: grid; gap: 12px; margin: 30px 0; }
+        .btn { 
+            display: block; 
+            padding: 16px; 
+            background: #7B8DA1; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            text-align: center;
+            font-weight: 600;
+        }
+        .btn-secondary { background: #5A6E7C; }
+        .install { 
+            background: #F5F5F0; 
+            padding: 16px; 
+            border-radius: 8px; 
+            font-size: 14px;
+            text-align: center;
+        }
+        .footer { text-align: center; color: #7D8CA3; font-size: 12px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Soft Summer Capsule</h1>
+        <div class="subtitle">17/18 Pieces Complete</div>
+        <div class="date">Last Updated: June 9, 2026</div>
 
-Dusty Blue
-#7B8DA1
-Slate Blue
-#5A6E7C
-Cocoa
-#6E5A54
-Rosewood
-#6B4E4E
-Rose Brown
-#A67B6D
-Taupe
-#B8A99A
-Charcoal
-#4A4A4A
-Navy
-#2C3E50
-Mushroom
-#C8BDB0
-Sage
-#9CAF88
-Mauve
-#9A8A95
-Lavender Grey
-#8A7F8A
-Dusty Pink
-#C8A8A0
-Soft White
-#F5F5F0
-Powder Blue
-#A8B8C8
-Blue Grey
-#7D8CA3
-What to TOSS
+        <h2>Your 16 Core Colors</h2>
+        <div class="swatches">
+            <div class="swatch">
+                <div class="color" style="background:#7B8DA1"></div>
+                <div class="label">
+                    <div class="name">Dusty Blue</div>
+                    <div class="hex">#7B8DA1</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="color" style="background:#5A6E7C"></div>
+                <div class="label">
+                    <div class="name">Slate Blue</div>
+                    <div class="hex">#5A6E7C</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="color" style="background:#6E5A54"></div>
+                <div class="label">
+                    <div class="name">Cocoa</div>
+                    <div class="hex">#6E5A54</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="color" style="background:#6B4E4E"></div>
+                <div class="label">
+                    <div class="name">Rosewood</div>
+                    <div class="hex">#6B4E4E</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="color" style="background:#A67B6D"></div>
+                <div class="label">
+                    <div class="name">Rose Brown</div>
+                    <div class="hex">#A67B6D</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="color" style="background:#B8A99A"></div>
+                <div class="label">
+                    <div class="name">Taupe</div>
+                    <div class="hex">#B8A99A</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="color" style="background:#4A4A4A"></div>
+                <div class="label">
+                    <div class="name">Charcoal</div>
+                    <div class="hex">#4A4A4A</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="color" style="background:#2C3E50"></div>
+                <div class="label">
+                    <div class="name">Navy</div>
+                    <div class="hex">#2C3E50</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="color" style="background:#C8BDB0"></div>
+                <div class="label">
+                    <div class="name">Mushroom</div>
+                    <div class="hex">#C8BDB0</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="color" style="background:#9CAF88"></div>
+                <div class="label">
+                    <div class="name">Sage</div>
+                    <div class="hex">#9CAF88</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="color" style="background:#9A8A95"></div>
+                <div class="label">
+                    <div class="name">Mauve</div>
+                    <div class="hex">#9A8A95</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="color" style="background:#8A7F8A"></div>
+                <div class="label">
+                    <div class="name">Lavender Grey</div>
+                    <div class="hex">#8A7F8A</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="color" style="background:#C8A8A0"></div>
+                <div class="label">
+                    <div class="name">Dusty Pink</div>
+                    <div class="hex">#C8A8A0</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="color" style="background:#F5F5F0"></div>
+                <div class="label">
+                    <div class="name">Soft White</div>
+                    <div class="hex">#F5F5F0</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="color" style="background:#A8B8C8"></div>
+                <div class="label">
+                    <div class="name">Powder Blue</div>
+                    <div class="hex">#A8B8C8</div>
+                </div>
+            </div>
+            <div class="swatch">
+                <div class="color" style="background:#7D8CA3"></div>
+                <div class="label">
+                    <div class="name">Blue Grey</div>
+                    <div class="hex">#7D8CA3</div>
+                </div>
+            </div>
+        </div>
 
-Bright red
-Khaki
-Warm camel
-Orange
-Stark black
-Optic white
-Gold
-Your Wardrobe Status
+        <div class="section toss">
+            <h2>What to TOSS</h2>
+            <div>Bright red • Khaki • Warm camel • Orange • Stark black • Optic white • Gold</div>
+        </div>
 
-✓
-Soft White Button-Down Shirt
-✓
-Powder Blue Knit Top
-✓
-Sage Green Tee
-✓
-Dusty Blue Sweater
-✓
-Navy Blazer
-✓
-Rosewood Cardigan
-✓
-Taupe Trench Coat
-✓
-Charcoal Trousers
-✓
-Navy Jeans
-✓
-Mushroom Wide-Leg Pants
-✓
-Slate Blue Midi Skirt
-✓
-Dusty Pink Slip Dress
-✓
-Cocoa Leather Tote
-✓
-Taupe Crossbody Bag
-✓
-Rose Brown Loafers
-✓
-Navy Ankle Boots
-✓
-Soft White Sneakers
-Grey/Charcoal Sneakers
-Quick Links
+        <div class="section status">
+            <h2>Your Wardrobe Status</h2>
+            <div class="item">Soft White Button-Down Shirt</div>
+            <div class="item">Powder Blue Knit Top</div>
+            <div class="item">Sage Green Tee</div>
+            <div class="item">Dusty Blue Sweater</div>
+            <div class="item">Navy Blazer</div>
+            <div class="item">Rosewood Cardigan</div>
+            <div class="item">Taupe Trench Coat</div>
+            <div class="item">Charcoal Trousers</div>
+            <div class="item">Navy Jeans</div>
+            <div class="item">Mushroom Wide-Leg Pants</div>
+            <div class="item">Slate Blue Midi Skirt</div>
+            <div class="item">Dusty Pink Slip Dress</div>
+            <div class="item">Cocoa Leather Tote</div>
+            <div class="item">Taupe Crossbody Bag</div>
+            <div class="item">Rose Brown Loafers</div>
+            <div class="item">Navy Ankle Boots</div>
+            <div class="item">Soft White Sneakers</div>
+            <div class="item missing">Grey/Charcoal Sneakers</div>
+        </div>
 
-Outfit Planner
-Shopping List
-Add to Home Screen
+        <div class="buttons">
+            <a href="planner.html" class="btn">Outfit Planner</a>
+            <a href="shopping.html" class="btn btn-secondary">Shopping List</a>
+        </div>
 
-iPhone: Tap  then "Add to Home Screen"
-Android: Tap menu  then "Install app"
-Made for you
+        <div class="install">
+            <strong>Add to Home Screen</strong><br>
+            iPhone: Tap ⬆️ then "Add to Home Screen"<br>
+            Android: Tap menu ⋮ then "Install app"
+        </div>
+
+        <div class="footer">Made for you</div>
+    </div>
+</body>
+</html>
