@@ -1,15 +1,22 @@
 Soft Summer Capsule Wardrobe
-My personal 18-piece Soft Summer wardrobe planner. 17/18 complete.
-Live site: https://anitalouiseduplessis-liefie.github.io/soft-summer/
-What’s inside:
-Swatch Card — 16 core Soft Summer colors with hex codes
-30-Day Planner — June 2026 outfits, zero repeats
-5-Day Packing List — Winter break, 12 pieces only
-Shopping Guide — Grey/charcoal sneaker options with links
-How to use:
-Open the live site on your phone → Share → Add to Home Screen. Works offline.
-Updating:
-Edit files directly in GitHub. Site updates in ~30 seconds.
-Last updated: June 9, 2026
-Season: Soft Summer
-Status: 17/18 pieces owned. Missing: Grey/Charcoal Sneakers
+Live App: https://anitalouiseduplessis-liefie.github.io/soft-summer/
+A personalized 18-piece capsule wardrobe app for Soft Summer color season. Works offline. Add to Home Screen for full-screen app experience.
+Features
+16 Core Color Swatches with hex codes for shopping
+17/18 Pieces Complete wardrobe tracker
+30-Day Outfit Planner with zero repeats
+Shopping Guide for missing Grey/Charcoal sneakers
+Winter Break Packing List - 12 pieces, 12 days
+Offline Support - works without internet after first load
+Your Soft Summer Palette
+Cool, muted, medium-contrast colors.
+Wear: Dusty Blue, Slate Blue, Cocoa, Rosewood, Rose Brown, Taupe, Charcoal, Navy, Mushroom, Sage, Mauve, Lavender Grey, Dusty Pink, Soft White, Powder Blue, Blue Grey
+Avoid: Bright red, Khaki, Warm camel, Orange, Stark black, Optic white, Gold
+How to Install on Phone
+iPhone: Open the live link in Safari → Share ⬆️ → "Add to Home Screen"
+Android: Open the live link in Chrome → Menu ⋮ → "Install app"
+Files
+index.html - Main swatches + wardrobe status
+planner.html - 30-day outfit calendar
+shopping.html - Sneaker buying guide
+Made for Anita • Last Updated: June 9, 2026
