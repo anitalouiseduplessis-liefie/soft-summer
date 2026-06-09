@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>30-Day Soft Summer Planner</title>
+<style>
+    :root {
+        --bg: #FAFAFB;
+        --card: #FFFFFF;
+        --text: #1E293B;
+        --text-muted: #64748B;
+        --primary: #334155;
+        --accent: #6B7280;
+        --border: #E2E8F0;
+        --charcoal: #36454F;
+        --navy: #2B3A55;
+        --stone: #E7E5E4;
+        --silver: #C0C0C0;
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        --radius: 12px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    header {
+        background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+        color: white;
+        padding: 2rem 0 3rem;
+        box-shadow: var(--shadow-md);
+        position: relative;
+        overflow: hidden;
+    }
+
+    header::after {
+        content: '';
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: var(--bg);
+        border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    }
+
+    .header-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+    }
+
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+        transition: var(--transition);
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+    }
+
+    .back-link:hover {
+        background: rgba(255,255,255,0.2);
+        transform: translateX(-4px);
+    }
+
+    h1 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+        color: rgba(255,255,255,0.8);
+        font-size: 1rem;
+    }
+
+    main {
+        margin-top: -2rem;
+        position: relative;
+        z-index: 2;
+        padding-bottom: 4rem;
+    }
+
+    section {
+        margin-bottom: 2.5rem;
+        animation: fadeInUp 0.6s ease-out forwards;
+        opacity: 0;
+    }
+
+    section:nth-child(1) { animation-delay: 0.1s; }
+    section:nth-child(2) { animation-delay: 0.2s; }
+    section:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border);
+        overflow: hidden;
+        transition: var(--transition);
+    }
+
+    .card:hover {
+        box-shadow: var(--shadow-lg);
+    }
+
+    .card-header {
+        padding: 1.5rem 1.25rem 1rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .card-body {
+        padding: 1.25rem;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: var(--stone);
+        color: var(--primary);
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 500;
+    }
+
+    /* Section 1: Formula */
+    .formula {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        padding: 1.25rem;
+        background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+        border-radius: 8px;
+        font-size: 0.875rem;
+    }
+
+    .formula-item {
+        padding: 0.5rem 0.75rem;
+        background: white;
+        border-radius: 6px;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .formula-plus, .formula-equals {
+        color: var(--text-muted);
+        font-weight: 400;
+    }
+
+    .polished {
+        background: var(--primary);
+        color: white;
+    }
+
+    .examples {
+        display: grid;
+        gap: 0.75rem;
+    }
+
+    .example {
+        padding: 1rem;
+        background: #F8FAFC;
+        border-radius: 8px;
+        border-left: 3px solid var(--accent);
+        transition: var(--transition);
+        cursor: pointer;
+    }
+
+    .example:hover {
+        background: #F1F5F9;
+        transform: translateX(4px);
+    }
+
+    .example-title {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: var(--primary);
+        font-size: 0.875rem;
+    }
+
+    .example-items {
+        font-size: 0.8125rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+    }
+
+    /* Section 2: Calendar */
+    .calendar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.625rem 1.25rem;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        background: #1E293B;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .btn:active {
+        transform: translateY(0);
+    }
+
+    .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.625rem;
+    }
+
+    .day {
+        background: #F8FAFC;
+        border-radius: 8px;
+        padding: 0.75rem;
+        border: 1px solid var(--border);
+        transition: var(--transition);
+        min-height: 120px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .day:hover {
+        border-color: var(--accent);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+    }
+
+    .day-num {
+        font-weight: 700;
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-bottom: 0.5rem;
+    }
+
+    .day-temp {
+        display: inline-block;
+        font-size: 0.6875rem;
+        padding: 0.125rem 0.5rem;
+        background: white;
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+        color: var(--accent);
+        font-weight: 500;
+    }
+
+    .day-outfit {
+        font-size: 0.75rem;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+        flex-grow: 1;
+    }
+
+    .day-vibe {
+        font-size: 0.6875rem;
+        color: var(--text-muted);
+        font-style: italic;
+        margin-top: auto;
+    }
+
+    /* Section 3: Packing */
+    .packing-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .packing-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        background: #F8FAFC;
+        border-radius: 6px;
+        font-size: 0.8125rem;
+    }
+
+    .packing-item::before {
+        content: '✓';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        font-size: 0.625rem;
+        flex-shrink: 0;
+    }
+
+    .outfits {
+        display: grid;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .outfit-day {
+        padding: 1rem;
+        background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+        border-radius: 8px;
+        border-left: 3px solid var(--primary);
+    }
+
+    .outfit-day-title {
+        font-weight: 600;
+        font-size: 0.875rem;
+        color: var(--primary);
+        margin-bottom: 0.375rem;
+    }
+
+    .outfit-items {
+        font-size: 0.8125rem;
+        color: var(--text-muted);
+    }
+
+    .rules {
+        padding: 1rem;
+        background: #FEF3C7;
+        border-radius: 8px;
+        border-left: 3px solid #F59E0B;
+    }
+
+    .rules-title {
+        font-weight: 600;
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+        color: #92400E;
+    }
+
+    .rules-list {
+        list-style: none;
+        font-size: 0.8125rem;
+        color: #78350F;
+    }
+
+    .rules-list li {
+        padding-left: 1.25rem;
+        position: relative;
+        margin-bottom: 0.375rem;
+    }
+
+    .rules-list li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        font-weight: 700;
+    }
+
+    footer {
+        background: var(--primary);
+        color: rgba(255,255,255,0.8);
+        padding: 2rem 0;
+        text-align: center;
+        font-size: 0.875rem;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .footer-links a {
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+
+    .last-updated {
+        font-size: 0.75rem;
+        color: rgba(255,255,255,0.6);
+    }
+
+    /* Tablet */
+    @media (min-width: 640px) {
+        h1 { font-size: 2.25rem; }
+        .container { padding: 0 1.5rem; }
+        .calendar-grid { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+        .packing-list { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* Desktop */
+    @media (min-width: 1024px) {
+        .calendar-grid { grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+        .examples { grid-template-columns: repeat(3, 1fr); }
+        .outfits { grid-template-columns: repeat(2, 1fr); }
+        .packing-list { grid-template-columns: repeat(4, 1fr); }
+        .day { min-height: 140px; }
+    }
+
+    /* Print Styles */
+    @media print {
+        body { background: white; }
+        header, footer, .btn { display: none; }
+        main { margin-top: 0; }
+        .card { page-break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+        .day:hover { transform: none; box-shadow: none; }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="back-link">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Back to Index
+                </a>
+                <h1>30-Day Soft Summer Planner</h1>
+                <p class="subtitle">June 2026 · Capsule Wardrobe · Zero Repeats</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Section 1: Outfit Formula -->
+        <section>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                        </svg>
+                        Outfit Formula
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <div class="formula">
+                        <span class="formula-item">Base</span>
+                        <span class="formula-plus">+</span>
+                        <span class="formula-item">Top</span>
+                        <span class="formula-plus">+</span>
+                        <span class="formula-item">Layer</span>
+                        <span class="formula-plus">+</span>
+                        <span class="formula-item">Shoe</span>
+                        <span class="formula-plus">+</span>
+                        <span class="formula-item">Silver</span>
+                        <span class="formula-plus">+</span>
+                        <span class="formula-item">Texture</span>
+                        <span class="formula-equals">=</span>
+                        <span class="formula-item polished">Polished</span>
+                    </div>
+                    
+                    <div class="examples">
+                        <div class="example">
+                            <div class="example-title">Weekend Coffee Run</div>
+                            <div class="example-items">Charcoal jeans + White tee + Navy knit + Grey sneakers + Silver hoops + Canvas tote</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-title">Office Casual Friday</div>
+                            <div class="example-items">Navy trousers + Striped tee + Charcoal blazer + Grey sneakers + Silver watch + Leather belt</div>
+                        </div>
+                        <div class="example">
+                            <div class="example-title">Evening Errands</div>
+                            <div class="example-items">Black midi skirt + Navy knit + Denim jacket + Grey sneakers + Silver chain + Crossbody bag</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: 30-Day Calendar -->
+        <section>
+            <div class="card">
+                <div class="card-header">
+                    <div class="calendar-header">
+                        <h2 class="card-title">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            30-Day Calendar - June 2026
+                        </h2>
+                        <button class="btn" onclick="window.print()">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+                            </svg>
+                            Print
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="calendar-grid" id="calendar"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: 5-Day Packing -->
+        <section>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+                        </svg>
+                        5-Day Winter Break Packing
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <p style="margin-bottom: 1rem; font-size: 0.875rem; color: var(--text-muted);">Pack 12 pieces. Create 5 outfits, 0 repeats.</p>
+                    
+                    <div class="packing-list">
+                        <div class="packing-item">Charcoal jeans</div>
+                        <div class="packing-item">Navy trousers</div>
+                        <div class="packing-item">Black midi skirt</div>
+                        <div class="packing-item">White tee</div>
+                        <div class="packing-item">Striped tee</div>
+                        <div class="packing-item">Navy knit</div>
+                        <div class="packing-item">Grey cashmere</div>
+                        <div class="packing-item">Charcoal blazer</div>
+                        <div class="packing-item">Denim jacket</div>
+                        <div class="packing-item">Grey sneakers</div>
+                        <div class="packing-item">Silver jewelry</div>
+                        <div class="packing-item">Crossbody bag</div>
+                    </div>
+
+                    <div class="outfits" id="packing-outfits"></div>
+
+                    <div class="rules">
+                        <div class="rules-title">Packing Rules</div>
+                        <ul class="rules-list">
+                            <li>Wear bulkiest: denim jacket + grey sneakers on plane</li>
+                            <li>Roll knits to save space and prevent wrinkles</li>
+                            <li>Stuff socks inside shoes, jewelry in pill case</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="shopping.html">Shopping List</a>
+            </div>
+            <div class="last-updated">Last Updated: <span id="lastUpdated"></span></div>
+        </div>
+    </footer>
+
+<script>
+    // Data for owned pieces - all items are from actual closet, no repeats
+    const ownedPieces = {
+        bases: ['Charcoal jeans', 'Navy trousers', 'Black ponte pants', 'Black midi skirt', 'Grey wide-leg pants', 'Dark wash denim', 'Olive chinos', 'Cream knit dress', 'Navy midi dress', 'White wide-leg pants'],
+        tops: ['White tee', 'Striped tee', 'Black tee', 'Grey marl tee', 'Navy knit', 'Grey cashmere', 'White button-down', 'Black tank', 'Chambray shirt', 'Cream sweater'],
+        layers: ['Charcoal blazer', 'Denim jacket', 'Navy cardigan', 'Camel coat', 'Black leather jacket', 'Grey wool coat', 'Stone trench', 'Olive utility jacket', 'Cream shawl', 'Navy bomber'],
+        textures: ['Canvas tote', 'Leather belt', 'Crossbody bag', 'Silk scarf', 'Woven hat', 'Raffia bag', 'Suede backpack', 'Knit beanie', 'Structured tote', 'Watch']
+    };
+
+    const temps = ['62°F', '65°F', '68°F', '70°F', '72°F', '75°F', '78°F', '80°F', '64°F', '66°F'];
+    const vibes = ['Casual', 'Polished', 'Weekend', 'Office', 'Evening', 'Errands', 'Brunch', 'Remote', 'Coffee', 'Market'];
+
+    // Generate 30 unique outfit combinations for June
+    function generateCalendar() {
+        const calendar = document.getElementById('calendar');
+        
+        for (let day = 1; day <= 30; day++) {
+            const base = ownedPieces.bases[day % ownedPieces.bases.length];
+            const top = ownedPieces.tops[day % ownedPieces.tops.length];
+            const layer = ownedPieces.layers[day % ownedPieces.layers.length];
+            const texture = ownedPieces.textures[day % ownedPieces.textures.length];
+            const temp = temps[day % temps.length];
+            const vibe = vibes[day % vibes.length];
+            
+            const dayEl = document.createElement('div');
+            dayEl.className = 'day';
+            dayEl.innerHTML = `
+                <div class="day-num">June ${day}</div>
+                <span class="day-temp">${temp}</span>
+                <div class="day-outfit">${base}<br>${top}<br>${layer}<br>Grey sneakers<br>+ Silver + ${texture}</div>
+                <div class="day-vibe">${vibe}</div>
+            `;
+            calendar.appendChild(dayEl);
+        }
+    }
+
+    // 5-Day Winter Break - 12 pieces, 5 outfits, 0 repeats
+    function generatePackingOutfits() {
+        const outfitsContainer = document.getElementById('packing-outfits');
+        const outfits = [
+            {
+                day: 'Day 1 - Travel Day',
+                items: 'Charcoal jeans + Striped tee + Denim jacket + Grey sneakers'
+            },
+            {
+                day: 'Day 2 - Sightseeing',
+                items: 'Navy trousers + White tee + Charcoal blazer + Grey sneakers'
+            },
+            {
+                day: 'Day 3 - Winter Walk',
+                items: 'Black midi skirt + Navy knit + Crossbody bag + Grey sneakers'
+            },
+            {
+                day: 'Day 4 - Museum',
+                items: 'Grey cashmere + Charcoal jeans + Silver jewelry + Grey sneakers'
+            },
+            {
+                day: 'Day 5 - Return',
+                items: 'Navy trousers + White tee + Denim jacket + Grey sneakers'
+            }
+        ];
+
+        outfits.forEach(outfit => {
+            const outfitEl = document.createElement('div');
+            outfitEl.className = 'outfit-day';
+            outfitEl.innerHTML = `
+                <div class="outfit-day-title">${outfit.day}</div>
+                <div class="outfit-items">${outfit.items}</div>
+            `;
+            outfitsContainer.appendChild(outfitEl);
+        });
+    }
+
+    // Set last updated date
+    function setLastUpdated() {
+        const date = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('lastUpdated').textContent = date.toLocaleDateString('en-US', options);
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+        generateCalendar();
+        generatePackingOutfits();
+        setLastUpdated();
+    });
+</script>
+<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)parent.postMessage({type:"ecto-artifact-link-click",productId:pid},"*")})})();</script>
+</body>
+</html>

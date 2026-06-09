@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Final Piece: Grey/Charcoal Sneakers - Soft Summer Guide</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap');
+  
+  :root {
+    --ss-grey: #8B9299;
+    --ss-charcoal: #4A5359;
+    --ss-warm-grey: #A8A39D;
+    --ss-rose: #C0A9B0;
+    --ss-lavender: #B4A7B7;
+    --ss-bg: #F7F5F3;
+    --ss-text: #2C3333;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--ss-bg);
+    color: var(--ss-text);
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, var(--ss-charcoal) 0%, var(--ss-grey) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(74, 83, 89, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(74, 83, 89, 0.12);
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .badge-best {
+    background: linear-gradient(135deg, #C0A9B0, #B4A7B7);
+    color: white;
+  }
+  
+  .badge-material {
+    background: #F0EDE9;
+    color: var(--ss-charcoal);
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, var(--ss-charcoal) 0%, var(--ss-grey) 100%);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 16px rgba(74, 83, 89, 0.2);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(74, 83, 89, 0.3);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+  
+  .btn-secondary {
+    background: white;
+    color: var(--ss-charcoal);
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid #E5E1DD;
+    cursor: pointer;
+  }
+  
+  .btn-secondary:hover {
+    background: #F7F5F3;
+    border-color: var(--ss-grey);
+  }
+  
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    transition: all 0.2s ease;
+  }
+  
+  .checklist-item:hover {
+    background: #F7F5F3;
+  }
+  
+  .checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--ss-grey);
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .checkbox.checked {
+    background: linear-gradient(135deg, var(--ss-charcoal), var(--ss-grey));
+    border-color: var(--ss-charcoal);
+  }
+  
+  .swatch {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.08);
+  }
+  
+  .table-mobile {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  @media (max-width: 640px) {
+    .table-desktop {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 641px) {
+    .table-mobile-card {
+      display: none;
+    }
+  }
+  
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(200%);
+    background: var(--ss-charcoal);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+  }
+  
+  .toast.show {
+    transform: translateX(-50%) translateY(0);
+  }
+  
+  .progress-bar {
+    height: 8px;
+    background: #E5E1DD;
+    border-radius: 100px;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--ss-rose), var(--ss-lavender));
+    border-radius: 100px;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(247, 245, 243, 0.85);
+  }
+</style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="sticky-header border-b border-gray-200/50">
+    <div class="max-w-4xl mx-auto px-4 py-4">
+      <div class="flex items-center justify-between gap-4">
+        <div class="flex-1">
+          <a href="index.html" class="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors mb-1">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+            Back to Capsule
+          </a>
+          <h1 class="text-2xl md:text-3xl gradient-text">Final Piece: Grey/Charcoal Sneakers</h1>
+          <p class="text-sm text-gray-600 mt-1">Soft Summer curated picks for your capsule</p>
+        </div>
+        <div class="text-right">
+          <div class="text-xs text-gray-500 mb-1">Progress</div>
+          <div class="text-lg font-bold" id="progressText">17/18</div>
+        </div>
+      </div>
+      <div class="progress-bar mt-3">
+        <div class="progress-fill" id="progressBar" style="width: 94.4%"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-8 space-y-12">
+    
+    <!-- Section 1: Your Options - 5 Picks -->
+    <section>
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center text-white font-bold">1</div>
+        <h2 class="text-2xl md:text-3xl">Your Options: 5 Curated Picks</h2>
+      </div>
+      
+      <div class="space-y-4">
+        <!-- Pick 1 -->
+        <div class="card p-5 md:p-6">
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="swatch" style="background: linear-gradient(135deg, #C7BAAD 0%, #B4A7B7 100%)"></div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-start gap-2 mb-2">
+                <h3 class="text-lg font-semibold">Adidas Campus 00s - Wonder Mauve Leather JS3776</h3>
+                <span class="badge badge-best">Best Match</span>
+              </div>
+              <p class="text-gray-600 mb-3">Cool-toned mauve-grey leather with that retro Campus shape. The leather upper is easier to style dressy vs suede, and the mauve undertone is perfect for Soft Summer.</p>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="badge badge-material">Leather upper</span>
+                <span class="text-xl font-bold text-gray-900">~R1,399</span>
+                <a href="https://www.adidas.co.za" target="_blank" class="btn-secondary ml-auto text-sm">View Shoe →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pick 2 -->
+        <div class="card p-5 md:p-6">
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="swatch" style="background: linear-gradient(135deg, #A8A9AD 0%, #8B9299 100%)"></div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-start gap-2 mb-2">
+                <h3 class="text-lg font-semibold">Reebok Classic Leather - Pure Grey GY0956</h3>
+                <span class="badge" style="background: #E8F5E9; color: #2E7D32;">Best Everyday</span>
+              </div>
+              <p class="text-gray-600 mb-3">True neutral grey with zero warmth. Classic silhouette works with everything from jeans to midi skirts. Full leather upper means they age well and clean easily.</p>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="badge badge-material">Leather upper</span>
+                <span class="text-xl font-bold text-gray-900">~R839</span>
+                <a href="https://www.reebok.co.za" target="_blank" class="btn-secondary ml-auto text-sm">View Shoe →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pick 3 -->
+        <div class="card p-5 md:p-6">
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="swatch" style="background: linear-gradient(135deg, #D4C5D1 0%, #C0A9B0 100%)"></div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-start gap-2 mb-2">
+                <h3 class="text-lg font-semibold">Adidas Campus 00s - Wonder Quartz JH5628</h3>
+                <span class="badge" style="background: #F3E5F5; color: #6A1B9A;">Best Dressy</span>
+              </div>
+              <p class="text-gray-600 mb-3">Pale quartz-pink suede that reads as cool grey in most light. Ultra soft suede elevates them for dressier outfits. Runs slightly warm but works for muted Soft Summer palettes.</p>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="badge badge-material">Suede</span>
+                <span class="text-xl font-bold text-gray-900">~R1,649</span>
+                <a href="https://www.adidas.co.za" target="_blank" class="btn-secondary ml-auto text-sm">View Shoe →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pick 4 -->
+        <div class="card p-5 md:p-6">
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="swatch" style="background: linear-gradient(135deg, #B8B5B0 0%, #8B9299 100%)"></div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-start gap-2 mb-2">
+                <h3 class="text-lg font-semibold">MANGO Canvas Sneakers with Leather Panels</h3>
+                <span class="badge" style="background: #E3F2FD; color: #1565C0;">Best Canvas</span>
+              </div>
+              <p class="text-gray-600 mb-3">Lightweight summer option. Canvas body keeps them breathable, leather panels add structure. Stick to grey/charcoal colorway - avoid beige or warm greige versions.</p>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="badge badge-material">Canvas + leather</span>
+                <span class="text-xl font-bold text-gray-900">R1,599</span>
+                <a href="https://shop.mango.com/za" target="_blank" class="btn-secondary ml-auto text-sm">View Shoe →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pick 5 -->
+        <div class="card p-5 md:p-6">
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="swatch" style="background: linear-gradient(135deg, #9CA3AF 0%, #6B7280 100%)"></div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-start gap-2 mb-2">
+                <h3 class="text-lg font-semibold">New Balance CTLYST - Grey</h3>
+                <span class="badge" style="background: #FFF3E0; color: #E65100;">Best Comfort</span>
+              </div>
+              <p class="text-gray-600 mb-3">Modern court silhouette with NB's signature cushioning. The grey is a true cool medium tone - no yellow cast. Synthetic upper is vegan-friendly and weather resistant.</p>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="badge badge-material">Synthetic but cool grey</span>
+                <span class="text-xl font-bold text-gray-900">~R1,119</span>
+                <a href="https://www.superbalist.com" target="_blank" class="btn-secondary ml-auto text-sm">View Shoe →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Soft Summer Sneaker Test -->
+    <section>
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-300 to-purple-300 flex items-center justify-center text-white font-bold">2</div>
+        <h2 class="text-2xl md:text-3xl">Soft Summer Sneaker Test</h2>
+      </div>
+      
+      <div class="card p-6 mb-4">
+        <p class="text-gray-600 mb-6">Use these 3 quick tests in-store or when your order arrives. If it fails 2+ tests, it's probably too warm for your palette.</p>
+        
+        <div class="space-y-2">
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="checkbox">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" style="display:none">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-semibold mb-1">Paper Test</h4>
+              <p class="text-sm text-gray-600">Hold the sneaker next to a sheet of white printer paper. Soft Summer greys should look cool/neutral against white, not creamy, beige, or yellow.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="checkbox">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" style="display:none">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-semibold mb-1">Face Test</h4>
+              <p class="text-sm text-gray-600">Hold the shoe near your face in natural light. Does it make your skin look grey/ashy or rosy/bright? Soft Summer harmonies bring out rose in cheeks, not sallow tones.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item" onclick="toggleCheck(this)">
+            <div class="checkbox">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" style="display:none">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-semibold mb-1">Silver Test</h4>
+              <p class="text-sm text-gray-600">Compare the shoe's midsole/accents to silver jewellery. Cool greys should harmonize with silver. If it looks better with gold/tan, it's too warm for you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Where to Shop in Joburg -->
+    <section>
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold">3</div>
+        <h2 class="text-2xl md:text-3xl">Where to Shop in Joburg</h2>
+      </div>
+
+      <!-- Desktop Table -->
+      <div class="card p-6 table-desktop">
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr class="border-b border-gray-200">
+                <th class="text-left py-3 px-4 font-semibold">Store</th>
+                <th class="text-left py-3 px-4 font-semibold">Best For</th>
+                <th class="text-left py-3 px-4 font-semibold">Pro Tip</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-100 hover:bg-gray-50">
+                <td class="py-4 px-4 font-medium">Superbalist</td>
+                <td class="py-4 px-4 text-sm text-gray-600">All 5 picks, free returns</td>
+                <td class="py-4 px-4 text-sm text-gray-600">Order 2 sizes if between. Use "Sneaker Week" sales</td>
+              </tr>
+              <tr class="border-b border-gray-100 hover:bg-gray-50">
+                <td class="py-4 px-4 font-medium">Woolworths</td>
+                <td class="py-4 px-4 text-sm text-gray-600">MANGO canvas styles</td>
+                <td class="py-4 px-4 text-sm text-gray-600">Check Sandton & Eastgate for stock. WRewards members get 10% off</td>
+              </tr>
+              <tr class="border-b border-gray-100 hover:bg-gray-50">
+                <td class="py-4 px-4 font-medium">PUMA Store</td>
+                <td class="py-4 px-4 text-sm text-gray-600">Try-on, New Balance CTLYST</td>
+                <td class="py-4 px-4 text-sm text-gray-600">Rosebank Mall & Mall of Africa have best range</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="py-4 px-4 font-medium">Adidas Originals</td>
+                <td class="py-4 px-4 text-sm text-gray-600">Campus 00s both colorways</td>
+                <td class="py-4 px-4 text-sm text-gray-600">Melrose Arch flagship stocks all exclusives. Staff can order in</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Mobile Cards -->
+      <div class="space-y-3 table-mobile-card">
+        <div class="card p-5">
+          <h4 class="font-semibold mb-2">Superbalist</h4>
+          <p class="text-sm text-gray-600 mb-1"><span class="font-medium">Best For:</span> All 5 picks, free returns</p>
+          <p class="text-sm text-gray-600"><span class="font-medium">Pro Tip:</span> Order 2 sizes if between. Use "Sneaker Week" sales</p>
+        </div>
+        <div class="card p-5">
+          <h4 class="font-semibold mb-2">Woolworths</h4>
+          <p class="text-sm text-gray-600 mb-1"><span class="font-medium">Best For:</span> MANGO canvas styles</p>
+          <p class="text-sm text-gray-600"><span class="font-medium">Pro Tip:</span> Check Sandton & Eastgate for stock. WRewards members get 10% off</p>
+        </div>
+        <div class="card p-5">
+          <h4 class="font-semibold mb-2">PUMA Store</h4>
+          <p class="text-sm text-gray-600 mb-1"><span class="font-medium">Best For:</span> Try-on, New Balance CTLYST</p>
+          <p class="text-sm text-gray-600"><span class="font-medium">Pro Tip:</span> Rosebank Mall & Mall of Africa have best range</p>
+        </div>
+        <div class="card p-5">
+          <h4 class="font-semibold mb-2">Adidas Originals</h4>
+          <p class="text-sm text-gray-600 mb-1"><span class="font-medium">Best For:</span> Campus 00s both colorways</p>
+          <p class="text-sm text-gray-600"><span class="font-medium">Pro Tip:</span> Melrose Arch flagship stocks all exclusives. Staff can order in</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: TOSS -->
+    <section>
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center text-white font-bold">4</div>
+        <h2 class="text-2xl md:text-3xl">TOSS: Avoid These</h2>
+      </div>
+
+      <div class="card p-6 bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-100">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center flex-shrink-0">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="15" y1="9" x2="9" y2="15"></line>
+              <line x1="9" y1="9" x2="15" y2="15"></line>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-red-900 mb-2">These will fight your palette</h3>
+            <p class="text-sm text-red-800">Soft Summer needs cool, muted tones. These warm/yellow-based options will make outfits look off.</p>
+          </div>
+        </div>
+        
+        <div class="space-y-3">
+          <div class="flex items-start gap-3 bg-white/60 p-4 rounded-lg">
+            <span class="text-xl">❌</span>
+            <div>
+              <h4 class="font-semibold text-gray-900">Earth Strata Campus</h4>
+              <p class="text-sm text-gray-700">The brown/green earth tones are too warm and saturated for Soft Summer</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 bg-white/60 p-4 rounded-lg">
+            <span class="text-xl">❌</span>
+            <div>
+              <h4 class="font-semibold text-gray-900">Warm Browns & Tans</h4>
+              <p class="text-sm text-gray-700">Caramel, tan, coffee - anything with yellow/orange base. Stick to cool taupe/greige instead</p>
+            </div>
+          <div class="flex items-start gap-3 bg-white/60 p-4 rounded-lg">
+            <span class="text-xl">❌</span>
+            <div>
+              <h4 class="font-semibold text-gray-900">Yellow or Gum Soles</h4>
+              <p class="text-sm text-gray-700">Yellow midsoles instantly warm up the whole shoe. Look for white, grey, or off-white soles only</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 pb-8">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="card p-6 md:p-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="text-center md:text-left">
+            <h3 class="text-xl font-semibold mb-2">Capsule Complete?</h3>
+            <p class="text-gray-600 text-sm">Mark your sneakers as bought to finish your 18/18 wardrobe</p>
+          </div>
+          <button id="markBoughtBtn" class="btn-primary w-full md:w-auto" onclick="markAsBought()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Mark as Bought
+          </button>
+        </div>
+        
+        <div class="flex flex-wrap items-center justify-center gap-4 mt-8 pt-6 border-t border-gray-200">
+          <a href="index.html" class="text-sm text-gray-600 hover:text-gray-900 transition-colors">← Capsule Index</a>
+          <span class="text-gray-300">•</span>
+          <a href="planner.html" class="text-sm text-gray-600 hover:text-gray-900 transition-colors">Outfit Planner</a>
+          <span class="text-gray-300">•</span>
+          <a href="index.html" class="text-sm text-gray-600 hover:text-gray-900 transition-colors">All Guides</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <div class="flex items-center gap-3">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+      <span id="toastMessage">Capsule complete! 18/18</span>
+    </div>
+  </div>
+
+  <script>
+    // Checklist functionality
+    function toggleCheck(element) {
+      const checkbox = element.querySelector('.checkbox');
+      const svg = checkbox.querySelector('svg');
+      checkbox.classList.toggle('checked');
+      svg.style.display = checkbox.classList.contains('checked') ? 'block' : 'none';
+    }
+
+    // Mark as bought functionality
+    let isBought = false;
+    
+    function markAsBought() {
+      if (isBought) return;
+      
+      isBought = true;
+      const btn = document.getElementById('markBoughtBtn');
+      const progressText = document.getElementById('progressText');
+      const progressBar = document.getElementById('progressBar');
+      const toast = document.getElementById('toast');
+      
+      // Update UI
+      btn.innerHTML = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        Added to Capsule!
+      `;
+      btn.style.background = 'linear-gradient(135deg, #10B981, #059669)';
+      btn.disabled = true;
+      
+      // Update progress
+      progressText.textContent = '18/18';
+      progressBar.style.width = '100%';
+      
+      // Show toast
+      toast.classList.add('show');
+      
+      // Store in localStorage
+      localStorage.setItem('sneakersBought', 'true');
+      localStorage.setItem('capsuleProgress', '18');
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // Check if already bought on load
+    window.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('sneakersBought') === 'true') {
+        isBought = true;
+        const btn = document.getElementById('markBoughtBtn');
+        const progressText = document.getElementById('progressText');
+        const progressBar = document.getElementById('progressBar');
+        
+        btn.innerHTML = `
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Added to Capsule!
+        `;
+        btn.style.background = 'linear-gradient(135deg, #10B981, #059669)';
+        btn.disabled = true;
+        progressText.textContent = '18/18';
+        progressBar.style.width = '100%';
+      }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)parent.postMessage({type:"ecto-artifact-link-click",productId:pid},"*")})})();</script>
+</body>
+</html>
