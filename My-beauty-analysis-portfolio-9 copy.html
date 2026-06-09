@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soft Summer Capsule</title>
+  <meta name="theme-color" content="#7B8DA1">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+      background: #F5F5F0; color: #2C3E50; line-height: 1.6; padding: 16px;
+    }
+    .container { max-width: 500px; margin: 0 auto; }
+    h1 { font-size: 24px; margin-bottom: 4px; }
+    .status { color: #5A6E7C; font-size: 14px; margin-bottom: 24px; }
+    h2 { font-size: 18px; margin: 32px 0 12px; color: #4A4A4A; }
+    .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 24px; }
+    .swatch { aspect-ratio: 1; border-radius: 8px; position: relative; }
+    .swatch span { 
+      position: absolute; bottom: 4px; left: 4px; right: 4px; 
+      font-size: 9px; background: rgba(255,255,255,0.9); 
+      padding: 2px 4px; border-radius: 3px; text-align: center;
+    }
+    .list { background: white; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+    .list-item { padding: 8px 0; border-bottom: 1px solid #F5F5F0; font-size: 14px; }
+    .list-item:last-child { border-bottom: none; }
+    .owned { color: #9CAF88; }
+    .missing { color: #A67B6D; font-weight: 600; }
+    .btn { 
+      display: block; background: #7B8DA1; color: white; text-decoration: none; 
+      padding: 14px; border-radius: 10px; text-align: center; margin: 8px 0; font-weight: 600;
+    }
+    .footer { text-align: center; font-size: 12px; color: #7D8CA3; margin-top: 40px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Soft Summer Capsule</h1>
+    <p class="status">17/18 Pieces Complete • Updated June 9, 2026</p>
+
+    <h2>Your 16 Core Colors</h2>
+    <div class="swatches">
+      <div class="swatch" style="background:#7B8DA1"><span>Dusty Blue</span></div>
+      <div class="swatch" style="background:#5A6E7C"><span>Slate Blue</span></div>
+      <div class="swatch" style="background:#6E5A54"><span>Cocoa</span></div>
+      <div class="swatch" style="background:#6B4E4E"><span>Rosewood</span></div>
+      <div class="swatch" style="background:#A67B6D"><span>Rose Brown</span></div>
+      <div class="swatch" style="background:#B8A99A"><span>Taupe</span></div>
+      <div class="swatch" style="background:#4A4A4A"><span>Charcoal</span></div>
+      <div class="swatch" style="background:#2C3E50"><span>Navy</span></div>
+      <div class="swatch" style="background:#C8BDB0"><span>Mushroom</span></div>
+      <div class="swatch" style="background:#9CAF88"><span>Sage</span></div>
+      <div class="swatch" style="background:#9A8A95"><span>Mauve</span></div>
+      <div class="swatch" style="background:#8A7F8A"><span>Lavender Grey</span></div>
+      <div class="swatch" style="background:#C8A8A0"><span>Dusty Pink</span></div>
+      <div class="swatch" style="background:#F5F5F0;border:1px solid #ddd"><span>Soft White</span></div>
+      <div class="swatch" style="background:#A8B8C8"><span>Powder Blue</span></div>
+      <div class="swatch" style="background:#7D8CA3"><span>Blue Grey</span></div>
+    </div>
+
+    <h2>Wardrobe Status</h2>
+    <div class="list">
+      <div class="list-item owned">✓ Charcoal straight jeans</div>
+      <div class="list-item owned">✓ Navy wide-leg jeans</div>
+      <div class="list-item owned">✓ Navy knit jumper</div>
+      <div class="list-item owned">✓ Charcoal ribbed knit</div>
+      <div class="list-item owned">✓ Mushroom stripe top</div>
+      <div class="list-item owned">✓ Charcoal boots</div>
+      <div class="list-item owned">✓ Navy flats</div>
+      <div class="list-item owned">✓ Silver jewellery set</div>
+      <div class="list-item missing">✗ Grey/Charcoal Sneakers</div>
+    </div>
+
+    <h2>What to TOSS</h2>
+    <div class="list">
+      <div class="list-item">Bright red • Khaki • Warm camel • Orange</div>
+      <div class="list-item">Stark black • Optic white • Gold jewellery</div>
+    </div>
+
+    <a href="planner.html" class="btn">30-Day Planner + Packing List</a>
+    <a href="shopping.html" class="btn">Sneaker Shopping Guide</a>
+
+    <div class="footer">
+      Add to Home Screen for offline access<br>
+      Made for you • Soft Summer Season
+    </div>
+  </div>
+</body>
+</html>
